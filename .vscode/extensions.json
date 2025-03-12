@@ -1,0 +1,20 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments", // Highlights comments as alerts (!), queries (?), TODOs (TODO:), and more.
+        "dbaeumer.vscode-eslint", // Format validation and auto-fixing.
+        "github.vscode-github-actions", // Validation and code completion for YAML and GitHub Actions Expressions.
+        "eamodio.gitlens", // Git experience toolkit in VSCode.
+        "yzhang.markdown-all-in-one", // GitHub-flavored auto-format, keyboard shortcuts, table of contents, enhanced preview, and auto-completion for Markdown files.
+        "yahyabatulu.vscode-markdown-alert", // Previews for GitHub-flavored Markdown "Alerts".
+        "ms-python.python", // Python language support.
+        "ms-python.vscode-pylance", // Extended Python language support.
+        "jnbt.vscode-rufo", // Ruby syntax validation and formatting.
+        "jock.svg", // SVG language support.
+        "mariomatheu.syntax-project-pbxproj", // Xcode Project language support.
+        "redhat.vscode-yaml", // YAML language support.
+        "firsttris.vscode-jest-runner" // Jest runner and debugger.
+    ],
+    "unwantedRecommendations": [
+        "esbenp.prettier-vscode" // Installing this breaks the eslint-prettier plugin. The ESLint extension already formats/validates with both linters!
+    ]
+}

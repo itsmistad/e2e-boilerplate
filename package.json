@@ -1,0 +1,36 @@
+{
+    "name": "e2e-boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "workspaces": [
+        "apps/*"
+    ],
+    "scripts": {
+        "clean": "turbo run clean",
+        "start": "turbo run start",
+        "test": "turbo run test",
+        "lint": "prettier --write . && eslint && turbo run lint",
+        "tsc": "turbo run tsc",
+        "build": "turbo run build",
+        "preinstall": "npx only-allow pnpm"
+    },
+    "author": "itsmistad",
+    "license": "MIT",
+    "devDependencies": {
+        "@eslint/markdown": "^6.2.2",
+        "eslint": "^9.19.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-markdown": "^5.1.0",
+        "eslint-plugin-prettier": "^5.2.3",
+        "eslint-plugin-yml": "^1.16.0",
+        "globals": "^15.14.0",
+        "prettier": "^3.4.2",
+        "turbo": "latest"
+    },
+    "type": "module",
+    "engines": {
+        "node": ">=20"
+    },
+    "packageManager": "pnpm@9.15.1"
+}

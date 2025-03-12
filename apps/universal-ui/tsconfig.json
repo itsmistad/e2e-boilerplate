@@ -1,0 +1,29 @@
+{
+    "extends": ["../../tsconfig.base.json", "expo/tsconfig.base"],
+    "compilerOptions": {
+        "strict": true,
+        "declaration": true,
+        "declarationMap": true,
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true,
+        "sourceMap": true,
+        "noEmit": true,
+        "paths": {
+            "@modules/*": [
+                "./src/modules/*"
+            ],
+            "@assets/*": [
+                "./src/assets/*"
+            ]
+        }
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.json",
+        ".expo/types/**/*.ts",
+        "expo-env.d.ts",
+    ]
+}
