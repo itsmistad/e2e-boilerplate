@@ -1,7 +1,7 @@
 const ES_MODULE_PATTERNS = [
     'react-native',
     '@react-native',
-    'react-native-reanimated/plugin',
+    'react-native-worklets/plugin',
     '@gorhom/bottom-sheet/mock',
     'expo',
     '@expo',
