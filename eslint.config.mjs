@@ -21,7 +21,7 @@ export default [
         },
     },
     {
-        files: ['*.{js|ts|mjs|mts}'],
+        files: ['*.{js,ts,jsx,tsx,mjs,mts}'],
         rules: {
             ...ESLint.configs.recommended.rules,
             indent: 'off',
