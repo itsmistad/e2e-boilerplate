@@ -7,13 +7,16 @@
         },
         "clean": {},
         "lint": {
-            "dependsOn": ["^build"]
+            "dependsOn": ["^lint"]
+        },
+        "lint:fix": {
+            "dependsOn": ["^lint:fix"]
         },
         "tsc": {
-            "dependsOn": ["^build"]
+            "dependsOn": ["^tsc"]
         },
         "test": {
-            "dependsOn": ["^build"]
+            "dependsOn": ["^test"]
         },
         "start": {
             "persistent": true,

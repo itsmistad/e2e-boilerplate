@@ -1,7 +1,11 @@
 module.exports = function (api) {
     api.cache(true);
+
+    const isTest = process.env.NODE_ENV === 'test' || process.env.JEST_WORKER_ID != null;
+
     return {
-        presets: ['babel-preset-expo'],
+        presets: ['babel-preset-expo', '@babel/preset-typescript'],
+        sourceMaps: isTest,
         plugins: [
             [
                 'module-resolver',
@@ -18,8 +22,9 @@ module.exports = function (api) {
                 '@tamagui/babel-plugin',
                 {
                     components: ['tamagui'],
-                    config: './modules/Tamagui/tamagui.config.ts',
+                    config: './src/modules/Tamagui/tamagui.ts',
                     logTimings: true,
+                    disable: isTest,
                     disableExtraction: process.env.NODE_ENV === 'development',
                 },
             ],

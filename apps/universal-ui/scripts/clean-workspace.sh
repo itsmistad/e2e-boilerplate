@@ -24,7 +24,7 @@ find . \
     \) \
     -print0 | xargs -0 rm -rf
 
-rm -rf node_modules/ ios/Pods/ ios/build android/ .env .expo/ .tamagui/
+rm -rf node_modules/ ios/Pods/ ios/build/ android/ .env .expo/ .tamagui/
 
 echo "Cleaning Metro cache..."
 

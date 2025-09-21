@@ -10,8 +10,8 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 import superjson from 'superjson';
 import { TamaguiProvider } from 'tamagui';
-import { trpc } from '@modules/API';
-import { tamaguiConfig } from '@modules/Tamagui';
+import { trpc } from '@modules/API/trpc';
+import { config as tamaguiConfig } from '@modules/Tamagui/tamagui';
 import SpaceMono from '../assets/fonts/SpaceMono-Regular.ttf';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.

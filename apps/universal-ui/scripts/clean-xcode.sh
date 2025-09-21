@@ -20,7 +20,3 @@ xcrun simctl shutdown all
 echo "Erasing all content and settings on all simulators..."
 
 xcrun simctl erase all
-
-echo "Installing CocoaPods..."
-
-cd "$CURRENT_DIR/../ios"; bundle exec pod repo remove trunk; bundle exec pod update

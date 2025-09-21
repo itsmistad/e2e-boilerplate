@@ -12,7 +12,7 @@
         "jock.svg", // SVG language support.
         "mariomatheu.syntax-project-pbxproj", // Xcode Project language support.
         "redhat.vscode-yaml", // YAML language support.
-        "firsttris.vscode-jest-runner" // Jest runner and debugger.
+        "vitest.explorer" // Test runner and debugger.
     ],
     "unwantedRecommendations": [
         "esbenp.prettier-vscode" // Installing this breaks the eslint-prettier plugin. The ESLint extension already formats/validates with both linters!

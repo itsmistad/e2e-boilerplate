@@ -1,9 +1,17 @@
+import { defineConfig } from 'eslint/config';
 import Import from 'eslint-plugin-import';
 import TSESLint from 'typescript-eslint';
 import BaseConfig from '../../eslint.config.mjs';
 
-export default TSESLint.config(
-    ...TSESLint.configs.recommended,
+export default defineConfig(
+    TSESLint.configs.recommended,
+    {
+        languageOptions: {
+            parserOptions: {
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
+    },
     Import.flatConfigs.recommended,
     Import.flatConfigs.typescript,
     ...BaseConfig,
@@ -15,8 +23,9 @@ export default TSESLint.config(
             },
         },
         rules: {
+            '@typescript-eslint/no-empty-object-type': 'off',
             '@typescript-eslint/indent': 'off',
-            '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
+            '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
             '@typescript-eslint/no-shadow': ['error'],
             '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
             '@typescript-eslint/no-undef': 'off',

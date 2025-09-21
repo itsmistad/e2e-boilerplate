@@ -15,13 +15,12 @@
             "@assets/*": [
                 "./src/assets/*"
             ]
-        }
+        },
+        "types": ["vitest/globals", "vitest/jsdom"]
     },
     "include": [
         "**/*.ts",
         "**/*.tsx",
-        "**/*.js",
-        "**/*.jsx",
         "**/*.json",
         ".expo/types/**/*.ts",
         "expo-env.d.ts",

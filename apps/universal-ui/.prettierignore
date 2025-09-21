@@ -1,8 +1,7 @@
-/node_modules/*
-/.git/
-/.expo/
-/dist/
-/web-build/
+node_modules/
+.expo/
+dist/
+web-build/
 expo-env.d.ts
 *.orig.*
 *.jks
@@ -19,4 +18,6 @@ yarn-error.*
 .env*
 *.tsbuildinfo
 .turbo
+__generated__/
+.tamagui/
 pnpm-lock.yaml

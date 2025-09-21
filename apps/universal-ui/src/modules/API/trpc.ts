@@ -1,4 +1,5 @@
-import { AppRouter } from '@repo/orchestrator';
 import { createTRPCReact } from '@trpc/react-query';
+import type { AppRouter } from '@apps/orchestrator';
 
-export const trpc = createTRPCReact<AppRouter>();
+// Explicitly declaring `trpc`s type like-so prevents an issue with symlink'd node_module resolution (a known issue with pnpm + tsc).
+export const trpc: ReturnType<typeof createTRPCReact<AppRouter>> = createTRPCReact<AppRouter>();

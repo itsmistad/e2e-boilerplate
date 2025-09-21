@@ -20,8 +20,10 @@
         "noImplicitAny": true,
         "noImplicitReturns": false,
         "noUnusedLocals": false,
-        "noUnusedParameters": false
+        "noUnusedParameters": false,
+        "declaration": false,
+        "declarationMap": false
     },
-    "include": ["**/*.ts", "**/*.js", "**/*.json"],
+    "include": ["**/*.ts", "**/*.json"],
     "exclude": ["node_modules/**/*", "dist"]
 }

@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 import React from 'react';
-import { trpc } from '@modules/API';
+import { trpc } from '@modules/API/trpc';
 
 export default function HomeScreen() {
     const { data: userList } = trpc.userList.useQuery();

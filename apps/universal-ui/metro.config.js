@@ -1,4 +1,5 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
+const path = require('path');
 const { withTamagui } = require('@tamagui/metro-plugin');
 const { getDefaultConfig } = require('expo/metro-config');
 
@@ -14,8 +15,10 @@ config.resolver = {
     unstable_enablePackageExports: true,
 };
 
+const tamaguiModule = './src/modules/Tamagui';
+
 module.exports = withTamagui(config, {
     components: ['tamagui'],
-    config: './modules/Tamagui/tamagui.config.ts',
-    outputCSS: './modules/Tamagui/web.css',
+    config: path.join(tamaguiModule, 'tamagui.ts'),
+    outputCSS: path.join(tamaguiModule, 'web.css'),
 });
