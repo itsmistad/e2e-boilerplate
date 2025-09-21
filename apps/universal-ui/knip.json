@@ -1,0 +1,21 @@
+{
+    "$schema": "https://unpkg.com/knip/schema.json",
+    "workspaces": {
+        ".": {
+            "project": "**/*.{ts,tsx,js,jsx,mjs,mts}"
+        }
+    },
+    "ignoreUnresolved": ["metro-minify-terser", "vitest/globals", "vitest/jsdom"],
+    "ignoreDependencies": ["@expo/metro-config"],
+    "rules": {
+        "dependencies": "warn",
+        "devDependencies": "warn",
+        "binaries": "off",
+        "files": "error"
+    },
+    "tags": ["-knipignore"],
+    "jest": {
+        "config": ["jest.config.mjs"],
+        "entry": ["**/*.spec.{ts,tsx}", "**/__mocks__/**/*.{ts,tsx}"]
+    }
+}

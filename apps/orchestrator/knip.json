@@ -1,0 +1,18 @@
+{
+    "$schema": "https://unpkg.com/knip/schema.json",
+    "workspaces": {
+        ".": {
+            "project": "**/*.{ts,tsx,js,jsx,mjs,mts}"
+        }
+    },
+    "rules": {
+        "dependencies": "warn",
+        "devDependencies": "warn",
+        "files": "error"
+    },
+    "tags": ["-knipignore"],
+    "vitest": {
+        "config": ["vitest.config.mts"],
+        "entry": ["**/*.spec.{ts,tsx}", "**/__mocks__/**/*.{ts,tsx}"]
+    }
+}

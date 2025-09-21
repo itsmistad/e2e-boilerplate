@@ -15,6 +15,9 @@
         "tsc": {
             "dependsOn": ["^tsc"]
         },
+        "knip": {
+            "dependsOn": ["^knip"]
+        },
         "test": {
             "dependsOn": ["^test"]
         },

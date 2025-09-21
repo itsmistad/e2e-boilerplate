@@ -13,6 +13,7 @@
         "lint": "eslint && turbo run lint",
         "lint:fix": "eslint --fix && turbo run lint:fix",
         "tsc": "turbo run tsc",
+        "knip": "turbo run knip",
         "build": "turbo run build",
         "preinstall": "npx only-allow pnpm"
     },
