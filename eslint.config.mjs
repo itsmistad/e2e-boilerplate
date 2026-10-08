@@ -42,16 +42,13 @@ export default [
             },
         },
     },
+    PrettierRecommended,
     {
         ignores: [
             '**/node_modules**',
             '**/.git',
             '**/dist**',
-            '**/npm-debug.*',
-            '**/yarn-debug.*',
-            '**/yarn-error.*',
             '**/.DS_Store**',
-            '**/*.pem',
             '**/.env*',
             '**/*.tsbuildinfo',
             '**/.turbo**',
@@ -59,5 +56,4 @@ export default [
             '**/apps/**',
         ],
     },
-    PrettierRecommended,
 ];

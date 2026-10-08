@@ -21,3 +21,5 @@ yarn-error.*
 __generated__/
 .tamagui/
 pnpm-lock.yaml
+.git/
+

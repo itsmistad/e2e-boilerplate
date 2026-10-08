@@ -12,11 +12,8 @@
         "lint:fix": {
             "dependsOn": ["^lint:fix"]
         },
-        "tsc": {
-            "dependsOn": ["^tsc"]
-        },
-        "knip": {
-            "dependsOn": ["^knip"]
+        "unused": {
+            "dependsOn": ["^unused"]
         },
         "test": {
             "dependsOn": ["^test"]

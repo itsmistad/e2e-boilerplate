@@ -1,55 +1,24 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env -S npx tsx
 
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
-import { v4 as uuid } from 'uuid';
-import { z } from 'zod';
-import { publicProcedure, router } from './trpc';
+import cors from 'cors';
+import { initializePocketBase } from './lib/pocketbase/pocketbase';
+import { appRouter } from './routers/appRouter';
+import { createContext } from './trpc';
 
-const userSchema = z.object({
-    id: z.string(),
-    displayName: z.string(),
+// Initialize PocketBase
+initializePocketBase().catch((error) => {
+    console.error('Failed to initialize PocketBase:', error);
+    process.exit(1);
 });
-type User = z.infer<typeof userSchema>;
-
-const createUserParamsSchema = userSchema.pick({ displayName: true });
-
-const usersMap = new Map<string, User>();
-
-const appRouter = router({
-    health: publicProcedure.query(async () => {
-        return {
-            status: 'healthy',
-            timestamp: new Date().toISOString(),
-            uptime: process.uptime(),
-        };
-    }),
-    userList: publicProcedure.query(async () => {
-        return Array.from(usersMap.values());
-    }),
-    userById: publicProcedure.input(z.string()).query(async (opts) => {
-        const { input: id } = opts;
-        return userSchema.parse(usersMap.get(id));
-    }),
-    userCreate: publicProcedure.input(createUserParamsSchema).mutation(async (opts) => {
-        const {
-            input: { displayName },
-        } = opts;
-
-        const user: User = {
-            id: uuid(),
-            displayName,
-        };
-
-        return usersMap.set(user.id, user);
-    }),
-});
-
-//  To avoid embedding the source of the router, we explicitly export the type declaration signature and NOT the router itself.
-export type AppRouter = typeof appRouter;
-export { appRouter };
 
 const server = createHTTPServer({
+    middleware: cors(),
     router: appRouter,
+    createContext,
 });
 
 server.listen(3000);
+
+//  To avoid embedding the source of the router, we explicitly export the type declaration signature and NOT the router itself.
+export type { AppRouter } from './routers/appRouter';

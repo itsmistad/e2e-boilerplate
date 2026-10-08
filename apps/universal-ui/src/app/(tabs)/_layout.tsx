@@ -1,12 +1,13 @@
 import { Platform } from 'react-native';
 import React from 'react';
 import { Tabs } from 'expo-router';
+import { Header } from '@modules/UI/Header';
 
 export default function TabLayout() {
     return (
         <Tabs
             screenOptions={{
-                headerShown: false,
+                header: () => <Header />,
                 tabBarStyle: Platform.select({
                     ios: {
                         // Use a transparent background on iOS to show the blur effect

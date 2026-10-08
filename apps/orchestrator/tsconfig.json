@@ -2,6 +2,14 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
-        "types": ["vitest/globals"]
+        "types": ["vitest/globals"],
+        "paths": {
+            "@lib/pocketbase": [
+                "./src/lib/pocketbase"
+            ],
+            "@lib/pocketbase/types": [
+                "./src/lib/pocketbase/__generated__/types.ts"
+            ],
+        },
     },
 }

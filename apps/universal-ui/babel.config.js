@@ -7,6 +7,7 @@ module.exports = function (api) {
         presets: ['babel-preset-expo', '@babel/preset-typescript'],
         sourceMaps: isTest,
         plugins: [
+            'babel-plugin-react-compiler', // must run first!
             [
                 'module-resolver',
                 {
@@ -22,7 +23,7 @@ module.exports = function (api) {
                 '@tamagui/babel-plugin',
                 {
                     components: ['tamagui'],
-                    config: './src/modules/Tamagui/tamagui.ts',
+                    config: './tamagui.config.ts',
                     logTimings: true,
                     disable: isTest,
                     disableExtraction: process.env.NODE_ENV === 'development',

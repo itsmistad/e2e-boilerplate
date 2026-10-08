@@ -24,6 +24,6 @@
         "declaration": false,
         "declarationMap": false
     },
-    "include": ["**/*.ts", "**/*.json"],
+    "include": ["**/*.ts", "**/*.js", "**/*.json"],
     "exclude": ["node_modules/**/*", "dist"]
 }

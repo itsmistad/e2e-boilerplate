@@ -11,7 +11,7 @@ const config = getDefaultConfig(__dirname, {
 
 config.resolver = {
     ...config.resolver,
-    unstable_enableSymlinks: true,
+    // unstable_enableSymlinks: true,
     unstable_enablePackageExports: true,
 };
 
@@ -19,6 +19,6 @@ const tamaguiModule = './src/modules/Tamagui';
 
 module.exports = withTamagui(config, {
     components: ['tamagui'],
-    config: path.join(tamaguiModule, 'tamagui.ts'),
+    config: 'tamagui.config.ts',
     outputCSS: path.join(tamaguiModule, 'web.css'),
 });

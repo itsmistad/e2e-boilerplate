@@ -16,6 +16,7 @@ yarn-error.*
 .DS_Store
 *.pem
 .env*
+!.env.example
 *.tsbuildinfo
 .turbo
 __generated__/

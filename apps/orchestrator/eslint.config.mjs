@@ -4,6 +4,7 @@ import TSESLint from 'typescript-eslint';
 import BaseConfig from '../../eslint.config.mjs';
 
 export default defineConfig(
+    ...BaseConfig,
     TSESLint.configs.recommended,
     {
         languageOptions: {
@@ -14,7 +15,6 @@ export default defineConfig(
     },
     Import.flatConfigs.recommended,
     Import.flatConfigs.typescript,
-    ...BaseConfig,
     {
         settings: {
             'import/resolver': {
@@ -32,6 +32,7 @@ export default defineConfig(
             '@typescript-eslint/no-empty-interface': 'off',
             '@typescript-eslint/no-empty-type': 'off',
             '@typescript-eslint/no-empty-function': 'off',
+            '@typescript-eslint/triple-slash-reference': 'off',
 
             'import/order': [
                 'error',
@@ -59,5 +60,15 @@ export default defineConfig(
             'import/no-named-as-default-member': 'off',
             'import/no-named-as-default': 'off',
         },
+    },
+    {
+        files: ['**/*.md/*.{ts,tsx}'],
+        rules: {
+            'import/no-unresolved': 'off',
+            '@typescript-eslint/no-unused-vars': 'off',
+        },
+    },
+    {
+        ignores: ['**/pb_data/**', '**/__generated__/**'],
     },
 );
